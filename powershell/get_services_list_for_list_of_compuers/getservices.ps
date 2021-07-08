@@ -1,0 +1,3 @@
+$Computers = Get-Content c:\users\administrator\desktop\js.txt
+foreach($computer in $computers) {​​​​​​​​​
+Get-Service -computername $computers | where{​​​​​​​​​​​​​​​​$_.StartType -eq "Automatic"}​​​​​​​​​​​​​​​​ | Select name,status, starttype, machinename }​​​​​​​​​​​​​​​​ 
