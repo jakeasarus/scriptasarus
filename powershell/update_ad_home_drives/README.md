@@ -3,9 +3,9 @@
 
 Requirements
 ------------------
-1. CSV file with a list of users. - 'get-aduser -properties mail |select name,samaccountname,mail |export-csv -path'
-2. Update 'PLACEHOLDER PATH' with the appropriate path to the csv.
-3. Add a column in the csv for each of the following: samaccountname, homedrive, homedirectory
+1. CSV file with a list of users. - 'get-aduser -properties mail -filter * |select name,samaccountname,mail |export-csv -path'
+2. Update 'PLACEHOLDER\PATH' with the appropriate path to the csv.
+3. Update PARENT\DIRECTORY with the share to prepend to the user name. ie - \\server\users\
 
 What it does
 ------------------
