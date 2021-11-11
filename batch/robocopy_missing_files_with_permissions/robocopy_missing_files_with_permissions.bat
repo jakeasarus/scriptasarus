@@ -1,0 +1,1 @@
+robocopy SOURCE DESTINATION /xc /xn /xo /copyall /mt:16 /R:1 /W:1
