@@ -1,0 +1,1 @@
+sudo python aws-replication-installer-init.py --region us-west-2 --aws-access-key-id YOUR-ACCESS-KEY-HERE --aws-secret-access-key YOUR-SECRET-ACCESS-KEY
