@@ -1,15 +1,3 @@
-#Create directory
-New-Item -Path C:\domain_discovery -ItemType directory
-New-Item -Path C:\dhcp_backup -ItemType directory
-Start-Sleep 5
-
-#query fsmo roles, features, dcdiag, and dfsr replication. Also export DHCP. 
-netdom query fsmo > c:\domain_discovery\query_fsmo.txt
-get-windowsfeature | where-object {$_.InstallState -eq 'Installed'} > c:\domain_discovery\installed_features.txt
-dcdiag > c:\domain_discovery\dcdiag.txt
-repadmin /showrepl > c:\domain_discovery\repadmin_showrepl.txt
-export-DhcpServer -ComputerName "THISCOMPUTERNAME" -File "C:\dhcp_backup\dhcpexport.xml"
-
 #Create backup directory
 New-Item -Path C:\ad_backups -ItemType directory
 
@@ -106,4 +94,3 @@ Get-GPOReport -All -ReportType html c:\ad_backups\gporeport.html
 #Group Policy Object Export
 ###############
 Get-ADComputer -Filter * -Properties * | sort DNSHostname | select * | Export-Csv -Path c:\ad_backups\computer_export.csv
-
