@@ -1,0 +1,1 @@
+Get-WmiObject -Class Win32_Product | Select Name, Vendor, Version | Sort-Object Name
